@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Future Majority Microsite</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://use.fontawesome.com/9fbf27f3f0.js"></script>
+        <!-- put in fonts here-->
+        <script src="/script.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="/css/main.css" media="screen" />
+        <link rel="shortcut icon" type="image/jpg" href="images/favicon.png" />
+    </head>
+    <container>
+    <nav class="navbar">
+        <a href="https://www.futuremajority.ca/"><img class="logo" src="/images/logo.webp" alt="logo"></a>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul class="nav_links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Media</a></li>
+            <li style="background: red; border-radius: 5px;"><a href="/pages/search.html">Find Your Local Candidates</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="search">
+        <div id="search_box">
+                        <form onsubmit="userAction()" action="javascript:">
+                            <input type="text" onsubmit="userAction()" autocomplete="off" id="myInput"
+                                class="form-control" placeholder="Search for your local candidate..." aria-label="Search"
+                                style="font-size: 2em; border: 1px solid gray; border-radius: 5px; width:20em; padding: 5px;">
+                        </form>
+                <p id="results" style="font-size: 1.8em"></p>
+    <!-- Start Search-->
+        <form onsubmit="userAction()" action="javascript:">
+            <input type="text" onsubmit="userAction()" autocomplete="off" id="myInput" class="form-control"
+                placeholder="" aria-label="Search" style="font-size: 1em; border:none">
+        </form>
+    </div>
+        <div id="results">
+            <p></p>
+        </div>
+    </div>
+    </div>
+    <script>
+        function userAction() {
+            let searchString = document.getElementById("myInput").value;
+            let txt = "";
+            console.log(searchString);
+
+            //----------------- MODIFY WEBHOOK_URL BELOW ------------------------
+
+            let webhook_url =
+                "https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/2019_candidates-tsinp/service/candidate_name/incoming_webhook/getCandidates";
+
+            let url = webhook_url + "?arg=" + searchString;
+
+            fetch(url)
+                .then(function (response) {
+                    if (!response.ok) {
+                        console.log(response);
+                        txt += `<br><br><br><b>Sadly you have an error. Status: ${response.status}`;
+                        if (response.json.length === 0)
+                            txt +=
+                            `<br><br>Make sure to search for some type of services. Don't leave your search box empty.</b>`;
+                        document.getElementById("results").innerHTML = txt;
+                        throw Error(response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(function (movieJSON) {
+                    if (movieJSON["$undefined"] === true) {
+                        console.log('NO FETCH RESULT');
+                        txt += `<br><br><br><b>No Fetch</b>`;
+                    } else {
+                        console.log("FETCHED RESULT... ");
+                        if (movieJSON.length !== 0) {
+                            console.log("Fetched array has " + movieJSON.length + " entries");
+                            txt = buildMovieList(movieJSON);
+                        } else {
+                            console.log("Fetched array has " + movieJSON.length + " entries");
+                            txt +=
+                                `<br><br><br><b>Sadly you have no search results. Try checking your spelling or contacting our <a href="mailto:ahmed.hussen@parl.gc.ca">office </a>to add this service to our database</b>`;
+                        }
+                    } // end of ELSE
+
+                    document.getElementById("results").innerHTML = txt;
+                }).catch(function (error) {
+                    console.log('Whoopsie! - error', error);
+                });
+        }
+
+        function buildMovieList(candidates) {
+            // HELPER FUNCTION FOR USER ACTION
+
+            let i = 0; // for number of movie documents returned
+            let j = 0; // for number of highlight entries
+            let k = 0; // for highlight.texts type entries - either "hit" or "text"
+            let highlight_length = 0;
+            let txt = "";
+
+            for (i; i < candidates.length; i++) {
+                txt += `<b>Candidate Name: ${candidates[i].first_name} ${candidates[i].family_name}</b><br>`;
+                txt += `Electoral District: ${candidates[i].electoral_district} <br>`;
+                txt += `Electoral District French: ${candidates[i].electoral_district_fre} <br>`;
+                txt += `Party: ${candidates[i].party} <br>`;
+                txt += `Party FR: ${candidates[i].party_fre} <br>`;
+                txt += `Sacha's Search Score (beta):  ${candidates[i].score["$numberDouble"]} <br>`;
+                txt += "<hr>";
+            }
+            return txt;
+        }
+    </script>
+    <!-- End of Search-->
+    <!-- End of Search-->
+    </container>
+</html>
