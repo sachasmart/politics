@@ -193,6 +193,7 @@
     width: 30vmax;
 }
 #watermark {
+    flex: auto;
     position: fixed;
     bottom: 0;
     right: 0;
