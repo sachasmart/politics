@@ -192,7 +192,12 @@
     border-radius: 5px;
     width: 30vmax;
 }
-
+#watermark {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1005;
+}
 
 
 
