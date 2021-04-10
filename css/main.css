@@ -101,6 +101,10 @@
     border-radius: 10px
 }
 
+.container .card a{
+    display: block;
+    text-decoration: none;
+}
 
 /* End Nav bar round 2 */
 .card:hover{
@@ -113,6 +117,7 @@
     transform: scale(1.035);
     z-index: 1001;
     border-radius: 10px;
+    text-decoration: none;
     filter: drop-shadow(0 0 0.25rem #414042);
     }
 
