@@ -113,8 +113,7 @@
     background-color: rgb(31, 215, 205);
     padding: 20px;
     color: white;
-    position: --webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0;
 }
 
