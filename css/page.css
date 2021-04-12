@@ -113,6 +113,9 @@
     background-color: rgb(31, 215, 205);
     padding: 20px;
     color: white;
+    position: --webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 #sidebar li{
