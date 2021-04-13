@@ -5,7 +5,7 @@
         end: '2021-05-14',
         progress: 0, 
         dependencies: null,
-        custom_class: 'bar-milestone',
+        custom_class: 'director',
         description: 'Planning and Strategy with Future Majority team', 
         resources: 'Director, Support, and Field'
     },{id: 'Task 2',
