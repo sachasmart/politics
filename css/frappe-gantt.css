@@ -12,7 +12,7 @@
 }
 
 .gantt .director .bar {
-    fill: rgb(8, 8, 156);
+    fill: #7161ef;
 }
 .gantt .support .bar {
     fill: rgb(109, 51, 0);
