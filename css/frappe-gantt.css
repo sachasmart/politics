@@ -15,11 +15,11 @@
     fill: #7161ef;
 }
 .gantt .support .bar {
-    fill: rgb(109, 51, 0);
+    fill: #52b2cf;
 }
 
 .gantt .field .bar {
-    fill: rgb(3, 97, 97);
+    fill: #8bdeab;
 }
 .gantt .grid-header {
     fill: #ffffff;
