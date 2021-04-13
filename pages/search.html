@@ -112,14 +112,13 @@
             let txt = "";
 
             for (i; i < candidates.length; i++) {
-                
                 txt += `<b>Candidate Name: ${candidates[i].first_name} ${candidates[i].family_name}</b><br>`;
                 txt += `Electoral District: ${candidates[i].electoral_district} <br>`;
                 txt += `Electoral District French: ${candidates[i].electoral_district_fre} <br>`;
                 txt += `Party: ${candidates[i].party} <br>`;
                 txt += `Party FR: ${candidates[i].party_fre} <br>`;
-                txt += "<b>Policy Positions</b></br>";
                 txt += `Phone: ${candidates[i].camp_phone} <br>`;
+                txt += '<p style="text-decoration: underline black">Policy Positions</p>';
                 txt += `Climate Change: ${candidates[i].climate_change} <br>`;
                 txt += `Affordability: ${candidates[i].affordability} <br>`;
                 txt += `Education: ${candidates[i].education} <br>`;
