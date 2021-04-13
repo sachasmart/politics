@@ -75,7 +75,7 @@
         progress: 0, 
         dependencies: 'Task 4',
         custom_class: 'director',
-        description: 'Email draft is approved and ready to send', 
+        description: 'Email draft is approved and any adjustments are made.', 
         resources: 'Director'
     },{
         id: 'Task 6',
@@ -85,7 +85,7 @@
         progress: 0, 
         dependencies: 'Task 5',
         custom_class: 'bar-milestone',
-        description: 'Email approved by Director of Special Projects and Future Majority Staff', 
+        description: 'Email approved by Director of Special Projects and all Future Majority Staff', 
         resources: 'Director'
     },{
         id: 'Task 7',
@@ -105,7 +105,7 @@
         progress: 0, 
         dependencies: 'Task 6',
         custom_class: 'director',
-        description: 'Email approved by Director of Special Projects and Future Majority Staff', 
+        description: 'The 20 incumbent candidates are contacted and brought onboard to participate in the project.', 
         resources: 'Director, Support Staff'
     },{
         id: 'Task 9',
@@ -135,7 +135,7 @@
         progress: 0,
         dependencies: null,
         custom_class: 'director',
-        description: 'Identify swing ridings',
+        description: 'Identify swing electoral districts',
         resources: 'Director, Support, Field'
     }, {
     id: 'Task 11',
@@ -149,13 +149,13 @@
         resources: 'Field Organizers'
     },{
     id: 'Task 12',
-        name: 'Outreach to candidates in respective regions',
+        name: 'Outreach to candidates in respective regions.',
         start: '2021-05-31',
         end: '2021-06-11',
         progress: 0, 
         dependencies: 'Task 7, Task 16',
         custom_class: 'field',
-        description: 'Amplify incumbent videos and microsite through social media channels', 
+        description: 'Field Organizers contact candidates in their respective regions to discuss the project and brought onboard to participate.', 
         resources: 'Field'
     },{
             id: 'Task 13',
@@ -165,7 +165,7 @@
             progress: 0,
             dependencies: null,
             custom_class: 'director',
-            description: 'Outreach to previous media contacts',
+            description: 'Outreach to previous media contacts.',
             resources: 'Field'
         
     },{
@@ -176,7 +176,7 @@
         progress: 0,
         dependencies: 'Task 13',
         custom_class: 'field',
-        description: 'Coordinate with regional Future Majority Membership to generate earned regional media',
+        description: 'Collaborate with regional Future Majority Membership to generate earned regional media.',
         resources: 'Field, Director, Support'
     },{
           id: 'Task 15',
@@ -186,30 +186,30 @@
           progress: 0,
           dependencies: 'Task 14',
           custom_class: 'bar-milestone',
-          description: 'Successfully obtain 1,000 1-minute videos and post on microsite',
+          description: 'Successfully obtain 1,000 1-minute videos and post on microsite.',
           resources: 'Director, Support, Field'
     },{
         
             id: 'Task 17',
-            name: 'Outreach to candidates in swing ridings',
+            name: 'Outreach to candidates in swing electoral districts',
             start: '2021-05-31',
             end: '2021-06-04',
             progress: 0,
             dependencies: 'Task 16',
             custom_class: 'director',
-            description: 'Identify swing ridings',
+            description: 'Connect with candidates in swing electoral districts and determine their interest in participating in a (virtual) debate',
             resources: 'Director, Support, Field'
         
     },{
 
             id: 'Task 18',
-            name: 'Select 5 Swing Ridings',
+            name: 'Select 5 swing electoral districts',
             start: '2021-06-07',
             end: '2021-06-07',
             progress: 0,
             dependencies: 'Task 17',
             custom_class: 'bar-milestone',
-            description: 'Identify swing ridings',
+            description: 'Choose 5 electoral districts and confirm their participation a debate',
             resources: 'Director, Support, Field'
  
     },
@@ -221,7 +221,7 @@
             progress: 0,
             dependencies: 'Task 18',
             custom_class: 'director',
-            description: 'Coordinate debates in selected ridings',
+            description: 'Coordinate debates in selected electoral districts',
             resources: 'Director, Support, Field'
     },{
 
