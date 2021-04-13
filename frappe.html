@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Future Majority Microsite</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://use.fontawesome.com/9fbf27f3f0.js"></script>
+    <script src="https://kit.fontawesome.com/ac176496ce.js" crossorigin="anonymous"></script>
+    <!-- put in fonts here-->
+    <script src="/politics/script.js" defer></script>
+    <!-- <link rel="stylesheet" type="text/css" href="politics/css/main.css" media="screen" /> -->
+    <link rel="stylesheet" type="text/css" href="/politics/css/gantt.css" media="screen" />
+    <link rel="shortcut icon" type="image/jpg" href="/politics/images/favicon.png" />
+    <link rel="stylesheet" href="/politics/css/frappe-gantt.css" />
+    <script src="/politics/dist/frappe-gantt.js"></script>
+    <script src="/politics/dist/frappe-gantt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+    <!-- <link rel="stylesheet" sr="frappe-gantt.min.css"></link>
+    <link rel="stylesheet" href="css/frappe-gantt.css"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.min.js"></script> 
+</head>
+<div class="container">
+    <nav class="navbar">
+        <a href="/politics/index.html"><img class="logo" src="/politics/images/logo.webp" alt="logo"></a>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul class="nav_links">
+            <li><a href="/politics/index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="/politics/frappe.html">Gantt Chart</a></li>
+            <!--GITHUB <li style="background: red; border-radius: 5px;"><a href="/politics/pages/search.html">Find Your Local Candidates</a></li> -->
+            <li style="background: red; border-radius: 5px;"><a href="/politics/pages/search.html">Find Your Local
+                    Candidates</a></li>
+        </ul>
+    </nav>
+    <div id="content1">
+            <h2>Legend</h2>
+            <ul>
+                <li><i class="fas fa-stop" style="color:tomato; padding: -5px;"></i>: Milestone<img src="" alt></li>
+                <li><i class="fas fa-stop" style="color: rgb(8, 8, 156); padding: -5px;"></i>: Director<img src="" alt></li>
+                <li><i class="fas fa-stop" style="color: rgb(109, 51, 0); padding: -5px;"></i>: Support Staff<img
+                        src="" alt></li>
+                <li><i class="fas fa-stop" style="color:rgb(3, 97, 97); padding: -5px;"></i>: Field Organizer<img src=""
+                        alt></li>
+                
+            </ul>
+            
+    </div>
+    <div id="chart_div" class="chart_div">
+        
+        <div class="gantt-target"></div>
+        <svg id="gantt"></svg>
+        <script src="/politics/frappe-script.js"></script>
+    </div>
+</div>
+</html>
