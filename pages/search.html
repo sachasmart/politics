@@ -71,7 +71,7 @@
                 .then(function (response) {
                     if (!response.ok) {
                         console.log(response);
-                        txt += `<br><br><br><b>Sadly you have an error. Status: ${response.status}`;
+                        txt += `<br><br><br><b>Response Error. Status: ${response.status}`;
                         if (response.json.length === 0)
                             txt +=
                             `<br><br>Make sure to search for some type of services. Don't leave your search box empty.</b>`;
@@ -112,15 +112,23 @@
             let txt = "";
 
             for (i; i < candidates.length; i++) {
+                
                 txt += `<b>Candidate Name: ${candidates[i].first_name} ${candidates[i].family_name}</b><br>`;
                 txt += `Electoral District: ${candidates[i].electoral_district} <br>`;
                 txt += `Electoral District French: ${candidates[i].electoral_district_fre} <br>`;
                 txt += `Party: ${candidates[i].party} <br>`;
                 txt += `Party FR: ${candidates[i].party_fre} <br>`;
+                txt += "<b>Policy Positions</b></br>";
+                txt += `Phone: ${candidates[i].camp_phone} <br>`;
+                txt += `Climate Change: ${candidates[i].climate_change} <br>`;
+                txt += `Affordability: ${candidates[i].affordability} <br>`;
+                txt += `Education: ${candidates[i].education} <br>`;
+                txt += `Housing: ${candidates[i].housing} <br>`;
                 txt += `Sacha's Search Score (beta):  ${candidates[i].score["$numberDouble"]} <br>`;
                 txt += "<hr>";
             }
-            return txt;
+
+                return txt;
         }
     </script>
     <!-- End of Search-->
