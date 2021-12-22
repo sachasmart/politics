@@ -51,7 +51,7 @@ function buildCandidateList(candidates) {
 
 	for (i; i < candidates.length; i++) {
 		txt += `<b><p style="font-size: larger">Candidate Name: ${candidates[i].first_name} ${candidates[i].family_name}</p></b><br>`;
-		txt += `<p style="font-size: large">Electoral District: ${candidates[i].electoral_district} <br>`;
+		txt += `Electoral District: ${candidates[i].electoral_district} <br>`;
 		txt += `Electoral District French: ${candidates[i].electoral_district_fre} <br>`;
 		txt += `Party: ${candidates[i].party} <br>`;
 		txt += `Party FR: ${candidates[i].party_fre} <br>`;
