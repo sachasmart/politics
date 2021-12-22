@@ -14,7 +14,7 @@ function userAction() {
 				console.log(response);
 				txt += `<br><br><br><b>Response Error. Status: ${response.status}`;
 				if (response.json.length === 0)
-					txt += `<br><br>Make sure to search for some type of services. Do not leave your search box empty.</b>`;
+					txt += `<br><br>Do not leave the search box empty.</b>`;
 				document.getElementById("results").innerHTML = txt;
 				throw Error(response.statusText);
 			}
