@@ -14,7 +14,7 @@ function userAction() {
 				console.log(response);
 				txt += `<br><br><br><b>Response Error. Status: ${response.status}`;
 				if (response.json.length === 0)
-					txt += `<br><br>Make sure to search for some type of services. Don't leave your search box empty.</b>`;
+					txt += `<br><br>Make sure to search for some type of services. Do not leave your search box empty.</b>`;
 				document.getElementById("results").innerHTML = txt;
 				throw Error(response.statusText);
 			}
@@ -31,7 +31,7 @@ function userAction() {
 					txt = buildCandidateList(candidateJSON);
 				} else {
 					console.log("Fetched array has " + candidateJSON.length + " entries");
-					txt += `<br><br><br><b>Sadly you have no search results. Try checking your spelling or contacting our <a href="mailto:fakeemail@gmail.com">office </a>to add this entry to our database</b>`;
+					txt += `<br><br><br><b>Sadly you have no search results. Try checking your spelling or contacting our <a href="mailto:fakeemail@email.com">office </a>to add this entry to our database</b>`;
 				}
 			} // end of ELSE
 
@@ -43,9 +43,9 @@ function userAction() {
 }
 
 function buildCandidateList(candidates) {
-	let i = 0; // for number of candidates docs returned
-	let j = 0; // for number of highlight entries
-	let k = 0; // for highlight.texts type entries - either "hit" or "text"
+	let i = 0;
+	let j = 0;
+	let k = 0;
 	let highlight_length = 0;
 	let txt = "";
 
