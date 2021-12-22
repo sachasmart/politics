@@ -57,7 +57,7 @@ function buildCandidateList(candidates) {
 		txt += `Party FR: ${candidates[i].party_fre} <br>`;
 		txt += `Phone: ${candidates[i].camp_phone} <br><br>`;
 		txt += '<p style="text-decoration: underline black">Policy Positions</p>';
-		txt += `<p style="font-size: large">Climate Change: ${candidates[i].climate_change} <br>`;
+		txt += `<p style="font-size: large">Climate Change: ${candidates[i].climate_change} </p><br>`;
 		txt += `Affordability: ${candidates[i].affordability} <br>`;
 		txt += `Reconciliation: ${candidates[i].education} <br>`;
 		txt += `Housing: ${candidates[i].housing} <br>`;
