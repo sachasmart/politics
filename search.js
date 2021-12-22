@@ -50,14 +50,14 @@ function buildCandidateList(candidates) {
 	let txt = "";
 
 	for (i; i < candidates.length; i++) {
-		txt += `<b><p style="font-size: 1.8em">Candidate Name: ${candidates[i].first_name} ${candidates[i].family_name}</p></b><br>`;
+		txt += `<b><p style="font-size: larger">Candidate Name: ${candidates[i].first_name} ${candidates[i].family_name}</p></b><br>`;
 		txt += `<p style="font-size: large">Electoral District: ${candidates[i].electoral_district} <br>`;
 		txt += `Electoral District French: ${candidates[i].electoral_district_fre} <br>`;
 		txt += `Party: ${candidates[i].party} <br>`;
 		txt += `Party FR: ${candidates[i].party_fre} <br>`;
 		txt += `Phone: ${candidates[i].camp_phone} <br><br>`;
 		txt +=
-			'<p style="text-decoration: underline black; 1.8em">Policy Positions</p>';
+			'<p style="text-decoration: underline black; font-size: larger">Policy Positions</p>';
 		txt += `Climate Change: ${candidates[i].climate_change} <br>`;
 		txt += `Affordability: ${candidates[i].affordability} <br>`;
 		txt += `Reconciliation: ${candidates[i].education} <br>`;
